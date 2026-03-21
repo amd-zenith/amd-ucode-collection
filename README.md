@@ -8,4 +8,6 @@ This collection is maintained using [ZenScraper](https://github.com/amd-zenith/z
 
 All uCode patches are stored in the `patches/` directory.
 
-For the patch files, the following naming convention should be used: `family<02x>_cpuid<08x>_rev<08x>_date<yyyymmdd>.bin`.
+For the patch files, the following naming convention applies:
+* Older patches (no encryption, family <= 15h): `family<family>_cpuid<cpuid>_rev<revision>_date<yyyymmdd>.bin`
+* Newer patches (family >= 16h): `family<family>_cpuid<cpuid>_rev<revision>_date<yyyymmdd>_enc<ee>.bin`
