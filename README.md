@@ -1,7 +1,10 @@
 # AMD uCode collection
 
 ![Microcode file count](https://img.shields.io/github/directory-file-count/amd-zenith/amd-ucode-collection/patches?label=Microcode%20patches)
-
+[![Update collection](https://github.com/amd-zenith/amd-ucode-collection/actions/workflows/update-collection.yml/badge.svg)](https://github.com/amd-zenith/amd-ucode-collection/actions/workflows/update-collection.yml)
+[![CodeQL](https://github.com/amd-zenith/amd-ucode-collection/actions/workflows/codeql.yml/badge.svg)](https://github.com/amd-zenith/amd-ucode-collection/actions/workflows/codeql.yml)
+[![Scorecard](https://github.com/amd-zenith/amd-ucode-collection/actions/workflows/scorecard.yml/badge.svg)](https://github.com/amd-zenith/amd-ucode-collection/actions/workflows/scorecard.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/amd-zenith/amd-ucode-collection/badge)](https://scorecard.dev/viewer/?uri=github.com/amd-zenith/amd-ucode-collection)
 
 A collection of AMD uCode files.
 
