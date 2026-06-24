@@ -1,0 +1,42 @@
+name: Update collection
+
+on:
+  schedule:
+    # Every day at 04:00 UTC
+    - cron: "0 4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ZenScraper
+        run: python -m pip install --upgrade pip zenscraper
+
+      - name: Run ZenScraper
+        run: zenscraper
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          add-paths: patches
+          branch: zenscraper/update-collection
+          delete-branch: true
+          commit-message: "Update collection"
+          title: "Update collection"
+          body: |
+            Automated collection update produced by [ZenScraper](https://github.com/amd-zenith/zenscraper).
+
+            This pull request was opened by the `Update collection` workflow because running ZenScraper changed the contents of `patches/`.
