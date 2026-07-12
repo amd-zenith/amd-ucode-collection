@@ -39,7 +39,11 @@ jobs:
           delete-branch: true
           commit-message: "Update collection"
           title: "Update collection"
+          reviewers: antoniovazquezblanco
+          assignees: antoniovazquezblanco
           body: |
             Automated collection update produced by [ZenScraper](https://github.com/amd-zenith/zenscraper).
 
             This pull request was opened by the `Update collection` workflow because running ZenScraper changed the contents of `patches/`.
+
+            cc @antoniovazquezblanco
