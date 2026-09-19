@@ -14,6 +14,19 @@ This collection is maintained using [ZenScraper](https://github.com/amd-zenith/z
 
 All uCode patches are stored in the `patches/` directory.
 
-For the patch files, the following naming convention applies:
-* Older patches (no encryption, family <= 15h): `family<family>_cpuid<cpuid>_rev<revision>_date<yyyymmdd>_sha<hash12>.bin`
-* Newer patches (family >= 16h): `family<family>_cpuid<cpuid>_rev<revision>_date<yyyymmdd>_enc<ee>_sha<hash12>.bin`
+Every patch file follows the same naming convention:
+
+```
+family<family>_cpuid<cpuid>_rev<revision>_date<yyyymmdd>_enc<ee>_sha<hash12>.bin
+```
+
+| Field      | Description                                                                          |
+| ---------- | ------------------------------------------------------------------------------------ |
+| `family`   | CPU family, 2 hex digits (currently `0f` to `1a`)                                    |
+| `cpuid`    | Processor signature the patch applies to, 8 hex digits                               |
+| `revision` | Patch revision, 8 hex digits                                                         |
+| `yyyymmdd` | Patch date                                                                           |
+| `ee`       | Encryption identifier, 2 hex digits: `00` for plain patches, `01` for encrypted ones |
+| `hash12`   | First 12 hex digits of the patch file SHA-256                                        |
+
+For example, `family1a_cpuid00B00F81_rev0b008124_date20260408_enc01_sha9a73959ffb9c.bin`.
