@@ -2,8 +2,8 @@ name: Update collection
 
 on:
   schedule:
-    # At 04:00 UTC on the 1st day of every month
-    - cron: "0 4 1 * *"
+    # At 04:00 UTC every Monday
+    - cron: "0 4 * * 1"
   workflow_dispatch: {}
 
 # Least privilege for this workflow.
